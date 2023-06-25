@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: numerico-ingress
+  namespace: default
+  labels:
+    app: numerico
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+    - host: "*.dev.indeci.gob.pe"
+      http:
+        paths:
+          - pathType: Prefix
+            path: /numerico
+            backend:
+              service:
+                name: numerico-service
+                port:
+                  number: 8081

@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service-numerico-deploy
+  namespace: default
+  labels:
+    app: numerico
+spec:
+  selector:
+    matchLabels: 
+      app: numerico
+  revisionHistoryLimit: 2
+  strategy:
+    type: RollingUpdate
+  replicas: 4
+  template:
+    metadata:
+      labels:
+        app: numerico
+    spec:
+      containers:
+      - image: ccarrenovi/numerico-service:v1
+        name: numerico
+        ports:
+        - name: http
+          containerPort: 8081
