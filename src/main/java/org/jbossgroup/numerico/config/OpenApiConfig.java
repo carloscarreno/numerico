@@ -16,7 +16,7 @@ public class OpenApiConfig {
     @Bean
     public OpenAPI customOpenAPI() {
         
-        final String securitySchemeName = "bearerAuth";
+       /*  final String securitySchemeName = "bearerAuth";
         return new OpenAPI()
                 .addSecurityItem(new SecurityRequirement().addList(securitySchemeName))
                 .components(new Components()
@@ -26,14 +26,14 @@ public class OpenApiConfig {
                                         .type(SecurityScheme.Type.HTTP)
                                         .scheme("bearer")
                                         .bearerFormat("JWT")))
-                .info(new Info().title("API Numerico").version("1.0"));
+                .info(new Info().title("API Numerico").version("1.0")); */
 
-       /*  return new OpenAPI()
+        return new OpenAPI()
                 .info(new Info()
                         .title("API de Numerico")
                         .version("1.0.0")
                         .description("Documentación generada con springdoc-openapi")
-                        .license(new License().name("Apache 2.0").url("https://springdoc.org"))); */
+                        .license(new License().name("Apache 2.0").url("https://springdoc.org")));
     }
 }
 
