@@ -22,7 +22,7 @@ public class SecurityConfig {
         return httpSecurity
                .csrf(csrf -> csrf.disable())
                .authorizeHttpRequests(http -> {
-                    http.requestMatchers("/welcome").permitAll();
+                    http.requestMatchers("/numerico/welcome").permitAll();
                     http.anyRequest().authenticated();
                 }) 
                .oauth2ResourceServer(oauth ->{
