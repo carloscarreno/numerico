@@ -24,8 +24,8 @@ public class SecurityConfig {
                .csrf(csrf -> csrf.disable())
                .authorizeHttpRequests(http -> {
                     http.requestMatchers("/numerico/welcome", 
-                                                     "/numerico/swagger-ui/**",
-                                                     "/numerico/v3/api-docs/**").permitAll();
+                                                     "/swagger-ui/**",
+                                                     "/v3/api-docs/**").permitAll();
                     http.anyRequest().authenticated();
                 }) 
                .oauth2ResourceServer(oauth ->{
